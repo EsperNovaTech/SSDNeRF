@@ -35,7 +35,3 @@ jobs:
     - name: Install MMCV
       run: |
         pip install mmcv-full
-
-    - name: Run train.py
-      run: |
-        python train.py
