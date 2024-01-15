@@ -32,10 +32,9 @@ jobs:
       run: |
         pip install torch torchvision torchaudio
 
-    - name: Install MMCV and MMGeneration
+    - name: Install MMCV
       run: |
         pip install mmcv-full
-        pip install mmgeneration
 
     - name: Run train.py
       run: |
