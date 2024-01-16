@@ -30,6 +30,7 @@ RUN pip3 install -v -e ./mmgeneration
 # Compile CUDA packages
 WORKDIR /app/lib/ops/raymarching
 COPY ./lib/ops/raymarching .
+RUN ls -la && cat setup.py
 RUN pip3 install -e . || (echo "Installation failed in /app/lib/ops/raymarching" && exit 1)
 WORKDIR /app/lib/ops/shencoder
 COPY ./lib/ops/shencoder .
