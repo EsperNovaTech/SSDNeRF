@@ -27,18 +27,15 @@ RUN pip3 install mmcv-full==1.6
 RUN git clone https://github.com/open-mmlab/mmgeneration && cd mmgeneration && git checkout v0.7.2
 RUN pip3 install -v -e ./mmgeneration
 
+# Copy the entire application
+COPY . /app
+
 # Compile CUDA packages
 WORKDIR /app/lib/ops/raymarching
-COPY ./lib/ops/raymarching .
-RUN ls -la && cat setup.py
 RUN pip3 install -e . || (echo "Installation failed in /app/lib/ops/raymarching" && exit 1)
 WORKDIR /app/lib/ops/shencoder
-COPY ./lib/ops/shencoder .
 RUN pip3 install -e . || (echo "Installation failed in /app/lib/ops/shencoder" && exit 1)
 WORKDIR /app
-
-# Copy the rest of the application
-COPY . .
 
 # Set the command to run when starting the container
 CMD ["python3", "train.py"]
