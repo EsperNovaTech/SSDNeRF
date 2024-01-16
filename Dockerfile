@@ -23,7 +23,7 @@ RUN pip3 install torch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1
 
 # Install MMCV and MMGeneration
 RUN pip3 install -U openmim
-RUN mim install mmcv-full==1.6
+RUN pip3 install mmcv-full==1.6
 RUN git clone https://github.com/open-mmlab/mmgeneration && cd mmgeneration && git checkout v0.7.2
 RUN pip3 install -v -e ./mmgeneration
 
