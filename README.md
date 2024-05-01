@@ -1,3 +1,5 @@
+📢 **NEWS:** We have released [MVEdit](https://github.com/Lakonik/MVEdit), an upgraded codebase based on SSDNeRF. MVEdit supports all SSDNeRF models and configs, and offers new features such as diffusers support and improved SSDNeRF GUI.
+
 # SSDNeRF
 
 Official PyTorch implementation of the ICCV 2023 paper:
